@@ -10,22 +10,22 @@ import Swal from 'sweetalert2'
   styleUrls: ['./quotes.component.css']
 })
 export class QuotesComponent implements OnInit {
-  quotes: Quotes[] = [
-    new Quotes(1, 'Sweet love quote', 'your always gain by giving love', "Resse Withersporn", "Max-well", new Date(2020, 3, 25), 20, 0),
-    new Quotes(2, 'Inspiration quote', "You just can't beat the person who never gives up", 'beinspired.com', 'John kipchoge', new Date(2019, 4, 6), 50, 0),
-    new Quotes(3, "Motivation quote", "With the new day comes new strength and new thoughts", "Eleoner.com", "Atony litunda", new Date(2018, 7, 20), 56, 0),
-    new Quotes(4, 'Bible quote', 'Without holiness no one will see God:Heb 12:14', 'Prophet Edward Owuor', 'barack maundu', new Date(2020, 1, 21), 50, 0)
+  quotes:Quotes[]=[
+    new Quotes(1,'Educational quote','Anyone who has never made a mistake has never tried anything new',"Albert Einstein","Albert Einstein",new Date(2020,3,25),20,0),
+    new Quotes(2,'Rasta quote',"Eat with the devil bt use a long spoon",'positive vibe.com','Yahi bu',new Date(2019,4,6),50,0),
+    new Quotes(3,"life quote","The road is loang bt we bt can't just stop","calos.com","Don carlos",new Date(2018,7,20),56,0),
+    new Quotes(4,'Love quote','One love to dih universe','Tuff Gong','Marley',new Date(2020,1,21),50,0)
   ];
-  toggleDetails(index) {
-    this.quotes[index].showDescription = !this.quotes[index].showDescription;
+  toggleDetails(index){
+    this.quotes[index].showDescription=!this.quotes[index].showDescription;
   }
-  deleteQuote(isComplete, index) {
-    if (isComplete) {
-      let toDelete = Swal.fire({
+  deleteQuote(isComplete,index){
+     if(isComplete){
+       let toDelete=Swal.fire({
         title: `${this.quotes[index].name}`,
         icon: 'success',
-        html: `The quote has been deleted successfully.`
-        ,
+        html:`The quote has been deleted successfully.`
+          ,
         showCloseButton: true,
         showCancelButton: true,
         focusConfirm: false,
@@ -36,16 +36,16 @@ export class QuotesComponent implements OnInit {
           '<i class="fa fa-thumbs-down"></i>',
         cancelButtonAriaLabel: 'Thumbs down'
       })
-
-      if (toDelete) {
-        this.quotes.splice(index, 1)
+     
+     if(toDelete){
+       this.quotes.splice(index,1)
+     }
       }
-    }
   }
-  addNewQuote(quote) {
-    let quotelength = this.quotes.length;
-    quote.id = quotelength + 1;
-    quote.completeDate = new Date(quote.completeDate)
+  addNewQuote(quote){
+    let quotelength=this.quotes.length;
+    quote.id=quotelength+1;
+    quote.completeDate=new Date(quote.completeDate)
     this.quotes.push(quote)
   }
   constructor() { }

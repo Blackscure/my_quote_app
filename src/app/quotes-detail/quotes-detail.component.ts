@@ -1,4 +1,4 @@
-import { Quotes } from './../quotes';
+import { Quotes } from '../quotes';
 import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 
 @Component({
@@ -28,4 +28,3 @@ export class QuotesDetailComponent implements OnInit {
   }
 
 }
-
